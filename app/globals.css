@@ -577,7 +577,14 @@ summary:focus-visible {
 }
 
 .feature-image--community img {
-  object-position: 50% 50%;
+  left: 0 !important;
+  top: -52.82% !important;
+  right: auto !important;
+  bottom: auto !important;
+  width: 100% !important;
+  height: 169.01% !important;
+  max-width: none !important;
+  object-fit: fill !important;
 }
 
 .faq-section {
@@ -651,6 +658,9 @@ summary:focus-visible {
 
 .help-section .section-description {
   max-width: 620px;
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .hotline-button {
@@ -1101,6 +1111,12 @@ summary:focus-visible {
     grid-template-columns: minmax(0, 1.3fr) minmax(300px, 0.7fr);
     align-items: end;
     gap: 70px;
+  }
+
+  .help-section .section-description {
+    margin-top: 14px;
+    font-size: 18px;
+    line-height: 25px;
   }
 
   .hotline-button {
