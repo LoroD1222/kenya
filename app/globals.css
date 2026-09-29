@@ -1,0 +1,1202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #1d4574;
+  --blue: #346eb2;
+  --cyan: #28aae2;
+  --sky: #ddf5ff;
+  --pale-sky: #e5f7ff;
+  --orange: #f78e1e;
+  --peach: #ffe1c1;
+  --copy: #808485;
+  --line: #cdcdcd;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: #ffffff;
+  color: var(--navy);
+  font-family: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+summary,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 5px var(--navy);
+}
+
+.site-container {
+  width: min(calc(100% - 28px), 1200px);
+  margin-inline: auto;
+}
+
+.site-header {
+  position: relative;
+  z-index: 50;
+  height: 72px;
+  background: var(--pale-sky);
+}
+
+.header-inner {
+  position: relative;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.brand-link img {
+  width: 206px;
+  height: auto;
+}
+
+.desktop-nav {
+  display: none;
+}
+
+.mobile-menu {
+  position: relative;
+}
+
+.mobile-menu summary {
+  display: block;
+  width: 41px;
+  height: 42px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.mobile-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.mobile-menu nav {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  display: grid;
+  width: 230px;
+  overflow: hidden;
+  border: 1px solid rgba(40, 170, 226, 0.35);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 14px 30px rgba(29, 69, 116, 0.18);
+}
+
+.mobile-menu nav a {
+  padding: 14px 18px;
+  border-bottom: 1px solid #e6eef3;
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.mobile-menu nav a:last-child {
+  border-bottom: 0;
+}
+
+.hero {
+  position: relative;
+  height: 708px;
+  overflow: hidden;
+  isolation: isolate;
+  color: #ffffff;
+}
+
+.hero-background,
+.hero-pattern {
+  position: absolute !important;
+  inset: 0;
+  z-index: -2;
+  object-fit: cover;
+}
+
+.hero-background {
+  object-position: 50% 45%;
+}
+
+.hero-pattern {
+  z-index: -1;
+  object-position: 42% 50%;
+  opacity: 0.2;
+  mix-blend-mode: soft-light;
+  transform: rotate(-90deg) scale(1.4);
+}
+
+.hero-inner {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  padding-block: 11px 17px;
+}
+
+.partner-badge {
+  display: flex;
+  width: 277px;
+  height: 23px;
+  align-items: center;
+  gap: 3px;
+  padding: 1px 5px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.86);
+  color: var(--navy);
+  font-size: 9px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.partner-badge span {
+  flex: 1;
+}
+
+.partner-badge img {
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.hero h1 {
+  max-width: 360px;
+  margin: 12px 0 6px;
+  font-family: "Dosis", ui-sans-serif, sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  max-width: 271px;
+  margin: 0;
+  color: var(--orange);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 18px;
+}
+
+.accent-line {
+  display: block;
+  width: 246px;
+  height: auto;
+  margin-top: 11px;
+  object-fit: fill;
+}
+
+.hero-body {
+  max-width: 360px;
+  margin: 10px 0 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+}
+
+.hero-action {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.hero-shield {
+  width: 231px;
+  height: 270px;
+  object-fit: contain;
+}
+
+.primary-button {
+  display: inline-flex;
+  width: 268px;
+  min-height: 36px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 6px 20px;
+  border-radius: 3px;
+  background: var(--orange);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 23px;
+  box-shadow: 0 3px 8px rgba(29, 69, 116, 0.12);
+}
+
+.primary-button:hover,
+.directions-button:hover {
+  background: #df7508;
+}
+
+.hotline-inline {
+  margin: 9px 0 0;
+  font-size: 13px;
+  line-height: 21px;
+}
+
+.hotline-inline strong {
+  margin-left: 4px;
+  padding: 1px 7px 2px;
+  border-radius: 2px;
+  background: rgba(221, 245, 255, 0.48);
+  font-size: 16px;
+}
+
+.section-heading .eyebrow,
+.eyebrow {
+  margin: 0;
+  color: var(--orange);
+  font-family: "Dosis", ui-sans-serif, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 27px;
+  text-transform: uppercase;
+}
+
+.section-heading h2,
+.vaccine-card h2 {
+  margin: 0;
+  color: var(--blue);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 27px;
+  letter-spacing: -0.01em;
+}
+
+.section-description {
+  margin-top: 1px;
+  color: var(--copy);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+}
+
+.section-description p {
+  margin: 0;
+}
+
+.service-overview {
+  background: #ffffff;
+}
+
+.service-overview-inner {
+  width: 100%;
+  max-width: none;
+}
+
+.services-copy {
+  min-height: 293px;
+  padding: 9px 14px 12px;
+  background: url("/assets/services-bg.svg") center / 100% 100% no-repeat;
+}
+
+.service-links {
+  margin-top: 10px;
+}
+
+.service-links a {
+  display: flex;
+  min-height: 34px;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--line);
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17px;
+}
+
+.service-links a:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.feature-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.feature-image img {
+  object-fit: cover;
+}
+
+.feature-image--family {
+  height: 277px;
+}
+
+.feature-image--family img {
+  object-position: 50% 44%;
+}
+
+.vaccine-section {
+  display: flex;
+  min-height: 235px;
+  align-items: center;
+  background: #ffffff;
+}
+
+.vaccine-card {
+  min-height: 216px;
+  padding: 12px 8px 11px;
+  border: 1px solid var(--cyan);
+  border-radius: 3px;
+}
+
+.vaccine-card-heading,
+.vaccine-details {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.vaccine-card-heading {
+  padding-left: 8px;
+}
+
+.vaccine-icon-wrap {
+  position: relative;
+  display: grid;
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
+  place-items: center;
+}
+
+.vaccine-icon-wrap > img:last-child {
+  position: relative;
+  z-index: 1;
+}
+
+.vaccine-details {
+  min-height: 115px;
+  margin-top: 18px;
+  padding: 7px 9px;
+  border-radius: 3px;
+  background: var(--peach);
+}
+
+.vaccine-details h3 {
+  margin: 0;
+  color: var(--navy);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.vaccine-details p {
+  max-width: 225px;
+  margin: 2px 0 0;
+  color: var(--copy);
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.vaccine-details .vaccine-free {
+  margin-top: 0;
+  color: var(--orange);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.how-section {
+  min-height: 323px;
+  padding-block: 5px 10px;
+  background: var(--pale-sky);
+}
+
+.booking-steps {
+  margin-top: 5px;
+}
+
+.booking-step h3 {
+  margin: 0;
+  color: var(--navy);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 27px;
+}
+
+.booking-step p {
+  margin: 0;
+  color: var(--copy);
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.or-divider {
+  display: grid;
+  height: 24px;
+  place-items: center;
+  background: url("/assets/or-divider.svg") center / 100% 1px no-repeat;
+}
+
+.or-divider span {
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  background: url("/assets/or-circle.svg") center / contain no-repeat;
+  color: #ffffff;
+  font-family: "Dosis", ui-sans-serif, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.feature-image--pharmacists,
+.feature-image--community {
+  height: 239px;
+}
+
+.feature-image--pharmacists img {
+  object-position: 50% 37%;
+}
+
+.directory-section {
+  padding: 7px 0 13px;
+  background: #ffffff;
+}
+
+.directory-section > .site-container {
+  width: calc(100% - 14px);
+}
+
+.directory-section .section-heading {
+  margin: 0 10px 19px;
+}
+
+.directory-section .section-description p + p {
+  margin-top: 17px;
+}
+
+.pharmacy-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.pharmacy-card {
+  position: relative;
+  min-height: 130px;
+  padding: 5px 7px 7px;
+  border: 1px solid var(--cyan);
+  border-radius: 3px;
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+}
+
+.pharmacy-card-topline {
+  display: flex;
+  min-height: 32px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.pharmacy-card h3 {
+  margin: 0;
+  color: var(--navy);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 27px;
+}
+
+.pharmacy-number {
+  position: relative;
+  display: grid;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  place-items: center;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 22px;
+}
+
+.pharmacy-number span {
+  position: relative;
+  z-index: 1;
+}
+
+.pharmacy-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 3px;
+  margin: 1px 0 0;
+  color: var(--copy);
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.pharmacy-detail img {
+  flex: 0 0 16px;
+  margin-top: 0;
+}
+
+.directions-button {
+  display: grid;
+  width: 105px;
+  height: 23px;
+  margin-top: 5px;
+  place-items: center;
+  border-radius: 3px;
+  background: var(--orange);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17px;
+}
+
+.feature-image--community img {
+  object-position: 50% 50%;
+}
+
+.faq-section {
+  background: var(--sky);
+}
+
+.faq-layout {
+  padding-block: 6px 36px;
+}
+
+.faq-layout > .section-heading {
+  min-height: 57px;
+}
+
+.faq-list {
+  border-top: 1px solid var(--line);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq-item summary {
+  display: flex;
+  min-height: 47px;
+  cursor: pointer;
+  list-style: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 9px 7px 6px 0;
+  color: var(--navy);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary img {
+  flex: 0 0 17px;
+  transition: transform 160ms ease;
+}
+
+.faq-item:not([open]) summary img {
+  transform: rotate(-90deg);
+}
+
+.faq-item p {
+  margin: -1px 0 13px;
+  color: var(--copy);
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.feature-image--help {
+  height: 128px;
+}
+
+.feature-image--help img {
+  object-position: 50% 48%;
+}
+
+.help-section {
+  min-height: 213px;
+  padding-block: 9px 23px;
+  background: url("/assets/help-bg.svg") center / 100% 100% no-repeat;
+}
+
+.help-section .section-description {
+  max-width: 620px;
+}
+
+.hotline-button {
+  display: flex;
+  width: 100%;
+  min-height: 36px;
+  align-items: center;
+  gap: 12px;
+  margin-top: 1px;
+  padding: 6px 8px;
+  border: 1px solid var(--cyan);
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.45);
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 23px;
+  box-shadow: 0 2px 7px rgba(29, 69, 116, 0.1);
+}
+
+.site-footer {
+  min-height: 201px;
+  padding-block: 11px 10px;
+  background: var(--navy);
+  color: #ffffff;
+}
+
+.footer-brand-row {
+  display: flex;
+  min-height: 87px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-logo {
+  width: 81px;
+  height: auto;
+}
+
+.footer-partners {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.footer-partners img {
+  object-fit: contain;
+}
+
+.footer-summary {
+  margin: 0;
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.footer-divider-wrap {
+  width: 100%;
+  height: 1px;
+  margin: 9px 0 8px;
+  overflow: hidden;
+}
+
+.footer-divider {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.footer-smallprint {
+  margin: 0;
+  font-size: 6px;
+  line-height: 9px;
+}
+
+@media (max-width: 350px) {
+  .brand-link img {
+    width: 186px;
+  }
+
+  .hero {
+    height: 748px;
+  }
+
+  .hero h1 {
+    font-size: 31px;
+  }
+
+  .hero-body {
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  .hero-shield {
+    width: 214px;
+    height: auto;
+  }
+
+  .primary-button {
+    width: min(268px, 100%);
+  }
+
+  .services-copy,
+  .how-section {
+    height: auto;
+  }
+
+  .vaccine-card {
+    width: calc(100% - 20px);
+  }
+
+  .vaccine-details {
+    gap: 9px;
+  }
+}
+
+@media (min-width: 768px) {
+  .site-container {
+    width: min(calc(100% - 64px), 1200px);
+  }
+
+  .site-header {
+    height: 82px;
+  }
+
+  .brand-link img {
+    width: 242px;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 2vw, 30px);
+    color: var(--navy);
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .desktop-nav a:not(.nav-cta):hover {
+    color: var(--blue);
+  }
+
+  .desktop-nav .nav-cta {
+    padding: 10px 18px;
+    border-radius: 3px;
+    background: var(--orange);
+    color: #ffffff;
+  }
+
+  .hero {
+    height: auto;
+    min-height: 630px;
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+    align-items: center;
+    gap: 48px;
+    padding-block: 56px;
+  }
+
+  .partner-badge {
+    width: 315px;
+    font-size: 10px;
+  }
+
+  .hero h1 {
+    max-width: 620px;
+    margin-top: 18px;
+    font-size: clamp(48px, 5vw, 64px);
+    line-height: 0.98;
+  }
+
+  .hero-subtitle {
+    max-width: 520px;
+    margin-top: 14px;
+    font-size: 25px;
+    line-height: 28px;
+  }
+
+  .accent-line {
+    margin-top: 18px;
+  }
+
+  .hero-body {
+    max-width: 620px;
+    margin-top: 17px;
+    font-size: 17px;
+    line-height: 23px;
+  }
+
+  .hero-action {
+    justify-content: center;
+  }
+
+  .hero-shield {
+    width: min(100%, 350px);
+    height: auto;
+  }
+
+  .primary-button {
+    width: 320px;
+    min-height: 44px;
+    padding-inline: 24px;
+    font-size: 17px;
+  }
+
+  .hotline-inline {
+    font-size: 14px;
+  }
+
+  .section-heading .eyebrow,
+  .eyebrow {
+    font-size: 14px;
+  }
+
+  .section-heading h2,
+  .vaccine-card h2 {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .section-description {
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .service-overview {
+    padding: 56px 0;
+    background: linear-gradient(180deg, #ffffff 0%, var(--pale-sky) 100%);
+  }
+
+  .service-overview-inner {
+    display: grid;
+    width: min(calc(100% - 64px), 1200px);
+    max-width: 1200px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    overflow: hidden;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 16px 42px rgba(29, 69, 116, 0.12);
+  }
+
+  .services-copy {
+    display: flex;
+    min-height: 440px;
+    flex-direction: column;
+    justify-content: center;
+    padding: 46px clamp(32px, 5vw, 72px);
+  }
+
+  .service-links {
+    margin-top: 28px;
+  }
+
+  .service-links a {
+    min-height: 47px;
+    font-size: 16px;
+  }
+
+  .feature-image--family {
+    height: 440px;
+  }
+
+  .vaccine-section {
+    padding-block: 64px;
+  }
+
+  .vaccine-card {
+    display: grid;
+    min-height: 180px;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 30px;
+    padding: 24px;
+    border-radius: 8px;
+  }
+
+  .vaccine-card-heading {
+    padding-left: 12px;
+  }
+
+  .vaccine-details {
+    min-height: 130px;
+    margin-top: 0;
+    padding: 20px;
+  }
+
+  .vaccine-details h3 {
+    font-size: 22px;
+  }
+
+  .vaccine-details p {
+    max-width: 410px;
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .how-section {
+    min-height: auto;
+    padding-block: 64px 72px;
+  }
+
+  .how-section .section-heading {
+    text-align: center;
+  }
+
+  .booking-steps {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr) 24px minmax(0, 1fr);
+    align-items: stretch;
+    gap: 24px;
+    margin-top: 42px;
+  }
+
+  .booking-step-group {
+    display: contents;
+  }
+
+  .booking-step {
+    min-height: 150px;
+    padding: 28px;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(29, 69, 116, 0.1);
+  }
+
+  .booking-step h3 {
+    font-size: 21px;
+  }
+
+  .booking-step p {
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .or-divider {
+    align-self: center;
+    background: none;
+  }
+
+  .feature-image--pharmacists,
+  .feature-image--community {
+    height: 390px;
+  }
+
+  .directory-section {
+    padding-block: 72px 80px;
+  }
+
+  .directory-section > .site-container {
+    width: min(calc(100% - 64px), 1200px);
+  }
+
+  .directory-section .section-heading {
+    max-width: 720px;
+    margin: 0 0 38px;
+  }
+
+  .directory-section .section-description p + p {
+    margin-top: 20px;
+  }
+
+  .pharmacy-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .pharmacy-card {
+    min-height: 148px;
+    padding: 12px 14px;
+    border-radius: 5px;
+  }
+
+  .pharmacy-card-topline {
+    min-height: 38px;
+  }
+
+  .pharmacy-card h3 {
+    font-size: 20px;
+  }
+
+  .pharmacy-detail {
+    gap: 6px;
+    margin-top: 3px;
+    font-size: 15px;
+    line-height: 19px;
+  }
+
+  .directions-button {
+    width: 115px;
+    height: 27px;
+    margin-top: 8px;
+  }
+
+  .feature-image--community,
+  .feature-image--help,
+  .feature-image--pharmacists {
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+
+  .faq-section {
+    padding-block: 72px;
+  }
+
+  .faq-layout {
+    display: grid;
+    grid-template-columns: minmax(250px, 0.75fr) minmax(0, 1.55fr);
+    gap: 70px;
+    padding-block: 0;
+  }
+
+  .faq-layout > .section-heading {
+    min-height: 0;
+  }
+
+  .faq-item summary {
+    min-height: 56px;
+    padding-block: 14px 9px;
+    font-size: 19px;
+    line-height: 23px;
+  }
+
+  .faq-item p {
+    margin-bottom: 18px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .feature-image--help {
+    height: 300px;
+  }
+
+  .help-section {
+    min-height: 290px;
+    padding-block: 56px;
+  }
+
+  .help-section .site-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(300px, 0.7fr);
+    align-items: end;
+    gap: 70px;
+  }
+
+  .hotline-button {
+    min-height: 50px;
+    padding: 10px 16px;
+    font-size: 16px;
+  }
+
+  .site-footer {
+    min-height: 230px;
+    padding-block: 28px;
+  }
+
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 120px minmax(0, 1fr) auto;
+    grid-template-areas:
+      "logo summary partners"
+      "logo divider divider"
+      "logo small small";
+    align-items: center;
+    column-gap: 34px;
+  }
+
+  .footer-brand-row {
+    display: contents;
+  }
+
+  .footer-logo {
+    grid-area: logo;
+    width: 105px;
+  }
+
+  .footer-partners {
+    grid-area: partners;
+  }
+
+  .footer-summary {
+    grid-area: summary;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .footer-divider-wrap {
+    grid-area: divider;
+    margin: 18px 0;
+  }
+
+  .footer-smallprint {
+    grid-area: small;
+    max-width: 950px;
+    font-size: 10px;
+    line-height: 15px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pharmacy-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .feature-image--pharmacists,
+  .feature-image--community {
+    height: 430px;
+  }
+
+  .feature-image--help {
+    height: 340px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero-inner,
+  .service-overview-inner,
+  .directory-section > .site-container,
+  .site-container,
+  .feature-image--pharmacists,
+  .feature-image--community,
+  .feature-image--help {
+    max-width: 1280px;
+  }
+
+  .hero {
+    min-height: 690px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
