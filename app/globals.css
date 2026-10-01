@@ -472,9 +472,13 @@ summary:focus-visible {
   font-weight: 700;
 }
 
-.feature-image--pharmacists,
-.feature-image--community {
+.feature-image--pharmacists {
   height: 239px;
+}
+
+.feature-image--community {
+  height: auto;
+  aspect-ratio: 538 / 239;
 }
 
 .feature-image--pharmacists img {
@@ -578,13 +582,14 @@ summary:focus-visible {
 
 .feature-image--community img {
   left: 0 !important;
-  top: -52.82% !important;
+  top: 0 !important;
   right: auto !important;
   bottom: auto !important;
   width: 100% !important;
-  height: 169.01% !important;
+  height: auto !important;
   max-width: none !important;
-  object-fit: fill !important;
+  object-fit: contain !important;
+  transform: translateY(-31.25%);
 }
 
 .faq-section {
@@ -1008,9 +1013,12 @@ summary:focus-visible {
     background: none;
   }
 
-  .feature-image--pharmacists,
-  .feature-image--community {
+  .feature-image--pharmacists {
     height: 390px;
+  }
+
+  .feature-image--community {
+    height: auto;
   }
 
   .directory-section {
@@ -1178,9 +1186,12 @@ summary:focus-visible {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .feature-image--pharmacists,
-  .feature-image--community {
+  .feature-image--pharmacists {
     height: 430px;
+  }
+
+  .feature-image--community {
+    height: auto;
   }
 
   .feature-image--help {
